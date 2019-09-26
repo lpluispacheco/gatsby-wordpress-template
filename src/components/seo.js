@@ -1,43 +1,18 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
-
-function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
-
-  const metaDescription = description || site.siteMetadata.description
-
+// seo for wordpress using yoast plugin
+function SEO({ title, desc, url, image, meta, lang }) {
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: desc,
         },
         {
           property: `og:title`,
@@ -45,7 +20,15 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: desc,
+        },
+        {
+          property: `og:url`,
+          content: url,
+        },
+        {
+          property: `og:image`,
+          content: image,
         },
         {
           property: `og:type`,
@@ -56,8 +39,12 @@ function SEO({ description, lang, meta, title }) {
           content: `summary`,
         },
         {
+          name: `twitter:site`,
+          content: `@nomatives`,
+        },
+        {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: `@nomatives`,
         },
         {
           name: `twitter:title`,
@@ -65,7 +52,11 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: desc,
+        },
+        {
+          name: `twitter:image`,
+          content: image,
         },
       ].concat(meta)}
     />

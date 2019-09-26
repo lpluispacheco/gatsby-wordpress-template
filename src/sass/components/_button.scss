@@ -1,0 +1,36 @@
+.btn {
+  display: inline-block;
+  border-radius: 100px;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 2rem;
+  font-size: 2.2em;
+  font-weight: bold;
+  transition: all 0.4s;
+
+  @include respond(lg-phone) {
+    padding: 2rem;
+    font-size: 3rem;
+  }
+}
+
+$transform: translate(0, -10px);
+
+.btn-nomatives {
+  background: $primary-color;
+}
+
+.btn-nomatives:hover {
+  background: #00aeff;
+  transform: $transform;
+  -moz-transform: $transform;
+  -webkit-transform: $transform;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}

@@ -1,0 +1,108 @@
+.cards-container {
+  .grid-container {
+    display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+
+    margin: 3% 10%;
+
+    @include respond(tab-land) {
+      grid-gap: 10rem;
+      grid-template-columns: 90%;
+      justify-content: center;
+    }
+
+    @include respond(lg-phone) {
+      grid-template-columns: 100%;
+      margin: 3% 3%;
+    }
+
+    .card {
+      border-radius: 0.25rem;
+      transition: 0.4s;
+      box-shadow: 0 0 4px -2.5px darken(rgb(48, 48, 48), 10%);
+
+      &:hover {
+        box-shadow: 0 0 15px 2px darken($primary-color, 10%);
+        // box-shadow: 0 0 20px 10px darken($primary-color, 10%);
+        // box-shadow: 10px 5px 40px 20px darken(#00aeff, 10%);
+        cursor: pointer;
+
+        .button-primary {
+          transform: translate(3rem, 0);
+        }
+      }
+
+      .develop-img {
+        background-image: url("https://placeimg.com/640/480/arch");
+        background-repeat: no-repeat;
+        min-height: 180px;
+        background-position: center;
+        background-color: rgba($primary-color, $alpha: 0.6);
+      }
+
+      .graphic-img {
+        background-image: url("https://placeimg.com/640/480/arch");
+        background-repeat: no-repeat;
+        min-height: 180px;
+        background-position: center;
+        background-color: rgba($primary-color, $alpha: 0.6);
+      }
+
+      .marketing-img {
+        background-image: url("https://placeimg.com/640/480/arch");
+        background-repeat: no-repeat;
+        min-height: 180px;
+        background-position: center;
+        background-color: rgba($primary-color, $alpha: 0.6);
+      }
+
+      .card-content {
+        padding: 1.2rem;
+        background-position: center;
+        background-color: #fff;
+        color: #000;
+
+        p,
+        h1 {
+          text-decoration: none !important;
+        }
+
+        .card-title {
+          font-size: 3rem;
+          padding: 4% 0 3% 0;
+        }
+
+        p {
+          font-size: 2.5rem;
+          padding: 0% 0 9% 0;
+
+          @include respond(md-desktop) {
+            font-size: 2.2rem;
+          }
+        }
+      }
+
+      .button-primary {
+        padding-left: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-justify: center;
+        padding-top: 3%;
+        border: none;
+        box-shadow: none;
+        font-family: inherit;
+        background-color: transparent;
+        color: $primary-color;
+        font-size: 2rem;
+        transition: 0.25s;
+      }
+    }
+  }
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
