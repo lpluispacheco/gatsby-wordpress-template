@@ -38,7 +38,7 @@ After develop you need to install the following plugins in WordPress
 1.  **Yoast SEO.**
 
     Install the plugin Yoast SEO in wordpress and then Yoast to REST API
-    https://github.com/niels-garve/yoast-to-rest-api
+    https://github.com/maru3l/wp-api-yoast-meta
 
 After this, you need to edit the gatsby-config.js file, in the section:
 
